@@ -21,7 +21,7 @@ const PersonalRoom = () => {
   const {user}= useUser();
   const client= useStreamVideoClient();
   const {call}= useGetCallById(user?.id!);
-  const MeetingLink = `${process.env.NEXT_PUBLIC_BASE_URL}/meeting/${user?.id}/?personal=true`;
+  const MeetingLink = `/meeting/${user?.id}/?personal=true`;
   const startnewMeeting = async() => {
     if (!user || !client) return;
     if(!call){
