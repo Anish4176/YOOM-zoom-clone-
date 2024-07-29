@@ -68,6 +68,7 @@ const MeetingList = () => {
       });
     }
   };
+  
 
   if (!client || !user) return <Loader />;
   const MeetingLink = `${process.env.NEXT_PUBLIC_BASE_URL}/meeting/${CallDetails?.id}`;
@@ -84,16 +85,7 @@ const MeetingList = () => {
           setMeetingState("isInstantMeeting");
         }}
       />
-      <MeetingCard
-        iconImage="/icons/join-meeting.svg"
-        iconalt="Join Meeting"
-        heading="Join Meeting"
-        description="via invitation link"
-        bgColor="bg-blue-1"
-        handleClick={() => {
-          setMeetingState("isJoinMeeting");
-        }}
-      />
+
       <MeetingCard
         iconImage="/icons/schedule.svg"
         iconalt="Schedule Meeting"
@@ -112,6 +104,16 @@ const MeetingList = () => {
         bgColor="bg-yellow-1"
         handleClick={() => {
           router.push("/recording");
+        }}
+      />
+            <MeetingCard
+        iconImage="/icons/join-meeting.svg"
+        iconalt="Join Meeting"
+        heading="Join Meeting"
+        description="via invitation link"
+        bgColor="bg-blue-1"
+        handleClick={() => {
+          setMeetingState("isJoinMeeting");
         }}
       />
 
